@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'KMOL'
+AUTHOR = '40823230'
 SITENAME = 'CP 2019 40823230'
 # 不要用文章所在目錄作為類別
 USE_FOLDER_AS_CATEGORY = False
