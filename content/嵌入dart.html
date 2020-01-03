@@ -154,21 +154,38 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">上傳照片 << <a href='上傳照片.html'>Previous</a> <a href='阻尼係數.html'>Next</a> >> 阻尼係數<br /><h1>For迴圈程式</h1>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">int i;
-int sum;
-  
-main(){
-  sum = 0;
-  for(i=1;i &lt;=10 ;i++){
-    sum += i;
-    print("$sum");
-  }
-  print("sum = $sum");
-}</pre>
-<p>For loop程式</p>
-<p><iframe height="600" src="https://dartpad.dev/embed-inline.html?id=9912d8b84e929aa7ced58d40e80e3449" width="800"><iframe></iframe></iframe></p>
-<br />上傳照片 << <a href='上傳照片.html'>Previous</a> <a href='阻尼係數.html'>Next</a> >> 阻尼係數</div>
+    <div id="tipue_search_content">阻尼係數 << <a href='阻尼係數.html'>Previous</a> <br /><h1>嵌入dart</h1>
+<script>
+function getDart(dirname){
+    source = "https://dartpad.github.io/embed-dart.html?gh_owner=40823230&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+    document.getElementById("iframe").src = source ;
+}
+
+function getHtmlDart(dirname){
+    source = "https://dartpad.github.io/embed-html.html?gh_owner=40823230&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+
+function getFlutter(dirname){
+    source = "https://dartpad.github.io/embed-flutter.html?gh_owner=40823230&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+
+function largest(){
+document.getElementById("iframe").width = document.body.clientWidth ;
+document.getElementById("iframe").height = document.body.clientWidth*0.5 ;
+}
+
+function original(){
+document.getElementById("iframe").width = 800 ;
+document.getElementById("iframe").height = 600 ;
+}
+</script>
+<!-- 取 Dart 程式的按鈕 -->
+<p><button onclick="largest()">放大</button> <button onclick="original()">回復</button> <button onclick="getDart('hello')">Hello</button> <button onclick="getDart('for')">For Loop</button> <button onclick="getDart('sum')">Sum</button> <button onclick="getDart('runge_kutta')">Runge-Kutta</button> <button onclick="getDart('mass_spring_damping')">Mass Spring Damping</button> <button onclick="getHtmlDart('roc_flag')">ROC Flag</button> <button onclick="getHtmlDart('grid')">Grid</button> <button onclick="getHtmlDart('slithery')">Slithery</button> <button onclick="getFlutter('flutter1')">Flutter1</button> <button onclick="getFlutter('flutter2')">Flutter2</button> <button onclick="getFlutter('flutter3')">Flutter3</button></p>
+<!-- 內建放入的 Dart 原始碼 -->
+<p></p>
+<p><iframe height="600" id="iframe" src="https://dartpad.dartlang.org/embed-dart.html?gh_owner=40823230&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/mass_spring_damping&amp;theme=dark" width="800"></iframe></p><br />阻尼係數 << <a href='阻尼係數.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
