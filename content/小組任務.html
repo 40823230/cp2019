@@ -154,13 +154,50 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">累加計算 << <a href='累加計算.html'>Previous</a> <a href='上傳照片.html'>Next</a> >> 上傳照片<br /><h1>hello程式</h1>
-<p>hello程式</p>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">void main() {
-  print("哈囉!");
-}</pre>
-<p><iframe height="600" src="https://dartpad.dev/embed-inline.html?id=39638fa01182fbb510b71c3b0ee8209a" width="800"><iframe></iframe></iframe></p>
-<br />累加計算 << <a href='累加計算.html'>Previous</a> <a href='上傳照片.html'>Next</a> >> 上傳照片</div>
+    <div id="tipue_search_content">嵌入dart << <a href='嵌入dart.html'>Previous</a> <br /><h1>小組任務</h1>
+<script>
+function getDart(dirname){
+    source = "https://dartpad.github.io/embed-dart.html?gh_owner=40823230&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+    document.getElementById("iframe").src = source ;
+}
+
+function getHtmlDart(dirname){
+    source = "https://dartpad.github.io/embed-html.html?gh_owner=40823230&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+
+function getFlutter(dirname){
+    source = "https://dartpad.github.io/embed-flutter.html?gh_owner=40823230&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+
+function largest(){
+document.getElementById("iframe").width = document.body.clientWidth ;
+document.getElementById("iframe").height = document.body.clientWidth*0.5 ;
+}
+
+function original(){
+document.getElementById("iframe").width = 800 ;
+document.getElementById("iframe").height = 600 ;
+}
+</script>
+<!-- 取 Dart 程式的按鈕 -->
+<h4>純 Dart 程式</h4>
+<p><button onclick="getDart('hello')">Hello</button> <button onclick="getDart('for')">For Loop</button> <button onclick="getDart('sum')">Sum</button> <button onclick="getDart('runge_kutta')">Runge-Kutta</button> <button onclick="getDart('rk_ex1')">RK ex1</button> <button onclick="getDart('mass_spring_damping')">Mass Spring Damping</button> <button onclick="getDart('forCF')">forCF</button></p>
+<h4>Html 程式</h4>
+<p><button onclick="getHtmlDart('roc_flag')">ROC Flag</button> <button onclick="getHtmlDart('grid')">Grid</button> <button onclick="getHtmlDart('xyplot')">X-Y Plot</button> <button onclick="getHtmlDart('slithery')">Slithery</button> <button onclick="getHtmlDart('CF')">CF</button><button onclick="getHtmlDart('random_grouping')">random_grouping</button></p>
+<h4>Flutter 程式</h4>
+<p><button onclick="getFlutter('flutter1')">Flutter1</button> <button onclick="getFlutter('flutter2')">Flutter2</button> <button onclick="getFlutter('flutter3')">Flutter3</button></p>
+<!-- 內建放入的 Dart 原始碼 -->
+<p><button onclick="largest()">放大</button> <button onclick="original()">回復</button></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p><iframe height="600" id="iframe" src="https://dartpad.dartlang.org/embed-dart.html?gh_owner=40823230&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/mass_spring_damping&amp;theme=dark" width="800"></iframe></p>
+<p>溫度轉換</p>
+<p>temperatures <input id="temperatures" max="100" min="0" type="number" value="0"/> °C <input id="submit" type="button" value="Calculate"/> <br/>°F: <label id="output"></label></p>
+<script src="./../downloads/dart_ex/CF/CF.js"></script><br />嵌入dart << <a href='嵌入dart.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
