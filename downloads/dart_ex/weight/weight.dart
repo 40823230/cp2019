@@ -9,11 +9,11 @@ main() {
     number = data.substring(0, len-2);
     number = int.parse(number);
     if (type == "k"){
-      double type=number*2.2;
-      print("kg:$number, =$type lb");
+      double type=number*2.2046;
+      print("kg:$number, = ${(type).toStringAsFixed(4)} lb");
     }else{
-      double type=number*0.45;
-      print("lb:$number, =$type kg");
+      double type=number*0.4535;
+      print("lb:$number, =${(type).toStringAsFixed(4)} kg");
     }
       
   }

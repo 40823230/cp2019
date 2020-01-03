@@ -1,4 +1,4 @@
-name:weight
+name: weight
 mode: dart
 files:
   - name: weight.dart
