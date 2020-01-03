@@ -17,16 +17,89 @@ void main() {
   querySelector("#usa").onClick.listen((e) => drawUSA(ctx));
   querySelector("#button").onClick.listen((e) => clearCanvas());
 }
+  
+  drawStar(cx, cy, spikes, outerRadius, innerRadius) {
+    var rot = Math.pi / 2 * 3;
+    var x = cx;
+    var y = cy;
+    var step = Math.pi / spikes;
 
-void drawUSA(ctx){
-  // 請畫出美國國旗
-  ctx.clearRect(0, 0, flag_w, flag_h);
-  ctx.font = "30px Arial";
-  ctx.strokeStyle = 'rgb(255, 0, 0)';
-  ctx.strokeText("請畫出美國國旗", flag_w/6, flag_w/4);
+    ctx.fillStyle = '#fff';
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - outerRadius);
+    for (int i = 0; i < spikes; i++) {
+        x = cx + Math.cos(rot) * outerRadius;
+        y = cy + Math.sin(rot) * outerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+
+        x = cx + Math.cos(rot) * innerRadius;
+        y = cy + Math.sin(rot) * innerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+    }
+    ctx.lineTo(cx, cy - outerRadius);
+    ctx.closePath();
+    ctx.lineWidth=5;
+    ctx.strokeStyle='white';
+    ctx.stroke();
+    ctx.fillStyle='white';
+    ctx.fill();
+
 }
 
-void drawROC(ctx){
+
+void drawUSA(ctx){
+  //紅底
+  ctx.clearRect(0, 0, flag_w, flag_h);
+  ctx.fillStyle = 'rgb(255, 0, 0)';
+  ctx.fillRect(0, 0, flag_w, flag_h);
+  //白線
+  ctx.fillStyle = 'rgb(255, 255, 255)';
+  ctx.fillRect(0, 15.3, flag_w, flag_h/13);
+  ctx.fillRect(0, 45.9, flag_w, flag_h/13);
+  ctx.fillRect(0, 75.5, flag_w, flag_h/13);
+  ctx.fillRect(0, 106.1, flag_w, flag_h/13);
+  ctx.fillRect(0, 136.7, flag_w, flag_h/13);
+  ctx.fillRect(0, 167.3, flag_w, flag_h/13);
+  //籃底
+  ctx.fillStyle = 'rgb(0, 0, 140)';
+  ctx.fillRect(0, 0, 150,106.1 );
+  //星星
+  drawStar(14, 17, 5, 5, 2.5);
+  drawStar(38, 17, 5, 5, 2.5);
+  drawStar(62, 17, 5, 5, 2.5);
+  drawStar(88, 17, 5, 5, 2.5);
+  drawStar(112, 17, 5, 5, 2.5);
+  drawStar(136, 17, 5, 5, 2.5);
+  
+  drawStar(25, 36, 5, 5, 2.5);
+  drawStar(50, 36, 5, 5, 2.5);
+  drawStar(75, 36, 5, 5, 2.5);
+  drawStar(100, 36, 5, 5, 2.5);
+  drawStar(125, 36, 5, 5, 2.5);
+  
+  drawStar(14, 54, 5, 5, 2.5);
+  drawStar(38, 54, 5, 5, 2.5);
+  drawStar(62, 54, 5, 5, 2.5);
+  drawStar(88, 54, 5, 5, 2.5);
+  drawStar(112, 54, 5, 5, 2.5);
+  drawStar(136, 54, 5, 5, 2.5);
+  
+  drawStar(25, 71, 5, 5, 2.5);
+  drawStar(50, 71, 5, 5, 2.5);
+  drawStar(75, 71, 5, 5, 2.5);
+  drawStar(100, 71, 5, 5, 2.5);
+  drawStar(125, 71, 5, 5, 2.5);
+  
+  drawStar(14, 88, 5, 5, 2.5);
+  drawStar(38, 88, 5, 5, 2.5);
+  drawStar(62, 88, 5, 5, 2.5);
+  drawStar(88, 88, 5, 5, 2.5);
+  drawStar(112, 88, 5, 5, 2.5);
+  drawStar(136, 88, 5, 5, 2.5);
+} 
+  void drawROC(ctx){
   // 先畫滿地紅
   ctx.clearRect(0, 0, flag_w, flag_h);
   ctx.fillStyle = 'rgb(255, 0, 0)';
@@ -59,7 +132,7 @@ void drawROC(ctx){
   // 填色設為藍色
   ctx.fillStyle = 'rgb(0, 0, 149)';
   ctx.fill();
-  // 白日:白心
+  //白日:白心
   ctx.beginPath();
   ctx.arc(circle_x, circle_y, flag_w / 16, 0, Math.pi * 2, true);
   ctx.closePath();
